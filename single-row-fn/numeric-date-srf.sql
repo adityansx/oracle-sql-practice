@@ -1,0 +1,141 @@
+SELECT
+	ROUND(369.936, 2) --369.94
+FROM
+	DUAL;
+
+SELECT
+	ROUND(369.420) -- 369, ROUNDed to the decimal point
+FROM
+	DUAL;
+
+SELECT
+	ROUND(369.72) -- 370, ROUNDed to the decimal point
+FROM
+	DUAL;
+
+SELECT
+	TRUNC(369.720) -- 369, TRUNCated to the decimal point if called with one args
+FROM
+	DUAL;
+
+SELECT
+	TRUNC(369.720) -- 369
+FROM
+	DUAL;
+
+--- DATE TIME FUNCTIONS ---
+SELECT
+	SYSDATE
+FROM
+	DUAL;
+
+SELECT
+	SYSTIMESTAMP
+FROM
+	DUAL;
+
+SELECT
+	ADD_MONTHS('11-SEP-23', 2) -- 11-NOV-23
+FROM
+	DUAL;
+
+SELECT
+	ADD_MONTHS(SYSDATE, -3) -- 21-JUN-23, today is 21-SEP-23
+FROM
+	DUAL;
+
+SELECT
+	ROUND(MONTHS_BETWEEN(SYSDATE, '10-SEP-23'), 2)
+FROM
+	DUAL;
+
+-- ROUND(/* LARGER DATE */, /* SMALLER DATE */)
+
+SELECT
+	TRUNC(SYSTIMESTAMP)
+FROM
+	DUAL;
+
+SELECT
+	TRUNC(SYSTIMESTAMP, 'MONTH')
+FROM
+	DUAL;
+
+SELECT
+	SYSDATE
+FROM
+	DUAL;
+
+SELECT
+	TO_CHAR(SYSDATE, 'Month DD, YYYY')
+FROM
+	DUAL;
+
+SELECT
+	TO_CHAR(SYSDATE, 'DDth "of" Month, YYYY')
+FROM
+	DUAL;
+
+SELECT
+	EMPNO,
+	ENAME,
+	TO_CHAR(SAL, '$999,999.99') AS SALARY
+FROM
+	EMP;
+
+SELECT
+	TO_DATE('2023-09-21', 'yyyy-mm-dd')
+FROM
+	DUAL;
+
+SELECT
+	ADD_MONTHS(TO_DATE('2023-09-21', 'yyyy-mm-dd'), 2)
+FROM
+	DUAL;
+
+SELECT
+	TO_DATE('3rd of June, 23', 'DDSP "of" Month, CCYY')
+FROM
+	DUAL;
+
+SELECT
+	NEXT_DAY('23-SEP-2023', 'SUNDAY') -- 24-SEP-23
+FROM
+	DUAL;
+
+SELECT
+	LAST_DAY(SYSDATE) -- returns last day of the month
+FROM
+	DUAL;
+
+SELECT
+	NEXT_DAY(SYSDATE, 'FRIDAY')
+FROM
+	DUAL;
+
+-- returns the date from which client is connected
+SELECT
+	CURRENT_DATE
+FROM
+	DUAL;
+
+--SYSDATE returns the date of the server in which the database resides
+
+-- the results below are run on the Oracle APEX web
+SELECT
+	CURRENT_TIMESTAMP
+FROM
+	DUAL;
+
+-- CURRENT_TIMESTAMP
+-- 23-SEP-23 05.23.54.669567 PM +00:00
+
+SELECT
+	SYSTIMESTAMP
+FROM
+	DUAL;
+
+-- SYSTIMESTAMP
+-- 23-SEP-23 05.24.40.475639 PM +00:00
+
+-- TODO: research further on the diff between CURRENT_TIMESTAMP and SYSTIMESTAMP

@@ -1,0 +1,46 @@
+SELECT
+	CONCAT('My name is ', ENAME)
+FROM
+	EMP;
+
+SELECT
+	UPPER('Hello')
+FROM
+	DUAL;
+
+SELECT
+	'Anaconda' AS SNAKE
+FROM
+	DUAL;
+
+SELECT
+	'Anaconda' AS SNAKE,
+	'Whale'    AS MAMMAL
+FROM
+	DUAL;
+
+SELECT
+	LOWER(ENAME)
+FROM
+	EMP;
+
+SELECT
+	CONCAT(UPPER(ENAME), ' is the name')
+FROM
+	EMP
+WHERE
+	DEPTNO = 20;
+
+SELECT
+	CONCAT(LOWER(ENAME), UPPER(' is the name'))
+	||' and their job is: '
+	||JOB
+FROM
+	EMP;
+
+-- OR
+
+SELECT
+	CONCAT( CONCAT(LOWER(ENAME), UPPER(' is the name')), CONCAT(' and their job is: ', JOB) ) AS JOB_DESCRIPTION
+FROM
+	EMP;
